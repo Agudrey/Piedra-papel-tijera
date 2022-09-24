@@ -135,26 +135,35 @@ const reset = (contH, contM) =>{
   score_human.textContent = contH.length;
   score_machine.textContent = contM.length;
 
-  console.log(contH.length);
-  console.log(contM.length);
-
 }
 
 // -----------------------------Start-------------------------------------- //
 
 
+// Arrays contadores de puntaje
+
 let cont_h = [];
 let cont_m = [];
+
+
+// número de puntos para ganar
+
+const num_rounds = prompt('Ingresa el número de puntos para ganar');
 
 
 
 rock_Btn.addEventListener('click', () =>{
 
-  if(cont_h.length < 3 && cont_m.length < 3){
+  if(cont_h.length < num_rounds && cont_m.length < num_rounds){
     console.log(play('rock', machine_election(), cont_h, cont_m));
   }
+
+  console.log(num_rounds);
+  console.log(cont_h.length);
+  console.log(cont_m.length);
+
   
-  if(cont_h.length === 3 || cont_m.length === 3){
+  if(cont_h.length == num_rounds || cont_m.length == num_rounds){
     if(cont_h.length > cont_m.length){
       text_result.textContent = 'HAS GANADO!';
       text_result.style.color = 'var(--verde)';
@@ -170,11 +179,11 @@ rock_Btn.addEventListener('click', () =>{
 
 paper_Btn.addEventListener('click', () =>{
 
-  if(cont_h.length < 3 && cont_m.length < 3){
+  if(cont_h.length < num_rounds && cont_m.length < num_rounds){
     console.log(play('paper', machine_election(), cont_h, cont_m));
   }
   
-  if(cont_h.length === 3 || cont_m.length === 3){
+  if(cont_h.length == num_rounds || cont_m.length == num_rounds){
     if(cont_h.length > cont_m.length){
       text_result.textContent = 'HAS GANADO!';
       text_result.style.color = 'var(--verde)';
@@ -190,12 +199,13 @@ paper_Btn.addEventListener('click', () =>{
 
 scissors_Btn.addEventListener('click', () =>{
 
-  if(cont_h.length < 3 && cont_m.length < 3){
+  if(cont_h.length < num_rounds && cont_m.length < num_rounds){
     console.log(play('scissors', machine_election(), cont_h, cont_m));
   }
-  
-  if(cont_h.length === 3 || cont_m.length === 3){
+
+  if(cont_h.length == num_rounds || cont_m.length == num_rounds){
     if(cont_h.length > cont_m.length){
+      console.log(num_rounds);
       text_result.textContent = 'HAS GANADO!';
       text_result.style.color = 'var(--verde)';
       return
@@ -208,6 +218,8 @@ scissors_Btn.addEventListener('click', () =>{
   }
 });
 
+
+// botón de restart
 
 reset_btn.addEventListener('click', () =>{
   reset(cont_h, cont_m)
