@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Piedra, papel o tijera</title>
+  <link rel="shortcut icon" type="image/x-icon" href="./imagenes/svg/title.svg">
   <link rel="stylesheet" href="./style.css">
   <link href="https://fonts.googleapis.com/css?family=Exo:300,400,700,800,900&amp;display=swap" rel="stylesheet">
 </head>
@@ -13,7 +14,7 @@
   <!--left-->
 
   <div class="left">
-    <div class="text_option">
+    <div class="text_description">
       <p>ESCOGE:</p>
       <p>PIEDRA, PAPEL</p>
       <p>O TIJERAS</p>
@@ -23,9 +24,9 @@
     <!--Buttons-->
   
     <div class="buttons">
-      <input id="piedra" type="image" class="botones_juego" src="./imagenes/svg/rockstar_orange.svg">
-      <input id="papel" type="image" class="botones_juego" src="./imagenes/svg/toilet-paper_orange.svg">
-      <input id="tijera" type="image" class="botones_juego" src="./imagenes/svg/scissor_orange.svg">
+      <input id="rock_button" type="image" class="buttons_game" src="./imagenes/svg/rockstar_orange.svg">
+      <input id="paper_button" type="image" class="buttons_game" src="./imagenes/svg/toilet-paper_orange.svg">
+      <input id="scissors_button" type="image" class="buttons_game" src="./imagenes/svg/scissor_orange.svg">
     </div>
   </div>
 
@@ -35,31 +36,31 @@
   <div class="center">
     <!--Header-->
     
-    <div id="header" class="header">
+    <header class="header">
       <img id="logo" class="logo" src="./imagenes/svg/title.svg" alt="Rock-Paper-Scissor">
-    </div>
+    </header>
 
     <!--Human vs machine-->
 
     <div class="humanVsMachine">
-      <div id="human" class="humanGrid">
-        <img id="user" class="characters" src="./imagenes/svg/user_main.svg" alt="user">
+      <div class="humanCharacter">
+        <img id="userImg" class="characters" src="./imagenes/svg/user_main.svg" alt="user">
       </div>
   
-      <div class="vsGrid">
+      <div class="vsIcon">
         <img id="vs" class="vs" src="./imagenes/svg/vs.svg" alt="vsGrid">
       </div>
   
-      <div id="machine" class="machineGrid">
-        <img id="robot" class="characters" src="./imagenes/svg/robot_main.svg" alt="macine">
+      <div class="machineCharacter">
+        <img id="robotImg" class="characters" src="./imagenes/svg/robot_main.svg" alt="macine">
       </div>
     </div>
 
 
     <!--text footer-->
 
-    <div class="footerGrid">
-      <div id="textoResult" class="text_result">
+    <footer class="footer">
+      <div id="textResult" class="text_result">
         ELIGE: 
         <img class="icons_text" src="./imagenes/svg/rockstar_yellow.svg" alt="rock icon">
         <img class="icons_text" src="./imagenes/svg/toilet-paper_yellow.svg" alt="paper icon">
@@ -67,7 +68,7 @@
         ?
       </div>
       <p id="footer_text">(Da click en cualquiera de las tres opciones para empezar!)</p>
-    </div>
+    </footer>
   </div>
 
 
@@ -76,22 +77,27 @@
   <div class="right">
     <!--Score-->
 
-    <div class="text_option">
+    <div class="text_description">
       <p>QUE GANE</p>
       <p>EL MEJOR</p>
       <p>DE 3!!</p>
     </div>
 
-    <div id="scores" class="scores">
+    <div class="scores">
       <div class="scoresWidth">
-        <div id="counter_human" class="score_human"></div>
-        <div id="number_counter_h" class="number_counter_h">0</div>
+        <div id="name_user" class="name_user"></div>
+        <div id="score_human" class="score_human">0</div>
       </div>
       <div class="scoresWidth">
-        <div id="counter_machine" class="score_machine">MAQUINA</div>
-        <div id="number_counter_m" class="number_counter_m">0</div>
+        <div id="machine" class="machine">MAQUINA</div>
+        <div id="score_machine" class="score_machine">0</div>
       </div>
     </div>
   </div>
+
+
+  <!--JS-->
+
+  <script src="scripts.js"></script>
 </body>
 </html>

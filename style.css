@@ -37,13 +37,13 @@ body{
 
 /* left */
 
-.text_option, .number_counter_h, .number_counter_m{
+.text_description, .number_counter_h, .number_counter_m{
   display: flex;
   flex-direction: column;
   text-align: center;
 }
 
-.text_option{
+.text_description{
   font-weight: 900;
   font-size: 1.5em;
   color: var(--violeta-claro);
@@ -58,7 +58,7 @@ body{
   align-items: center;
 }
 
-.botones_juego{
+.buttons_game{
   height: 8em;
   padding: 18px;
   border-top: 0.2em solid var(--amarillo);
@@ -79,7 +79,7 @@ body{
           animation: shadow-pulse 1s infinite;
 }
 
-.botones_juego:hover{
+.buttons_game:hover{
   background-color: var(--violeta-medio);
 }
 
@@ -88,9 +88,15 @@ body{
 
 @-webkit-keyframes shadow-pulse{
   
-  from { -webkit-box-shadow: 0.1em 0.1em 0 0.35em var(--violeta-oscuro-degrade); }
-  50% { -webkit-box-shadow: 0.1em 0.1em 0 0.35em var(--violeta-oscuro-degrade); }
-  to { -webkit-box-shadow: 0.1em 0.1em 0 0.35em var(--violeta-oscuro-degrade); }
+  from { 
+    -webkit-box-shadow: 0.1em 0.1em 0 0.35em var(--violeta-oscuro-degrade); 
+  }
+  50% { 
+    -webkit-box-shadow: 0.1em 0.1em 0 0.35em var(--violeta-oscuro-degrade); 
+  }
+  to { 
+    -webkit-box-shadow: 0.1em 0.1em 0 0.35em var(--violeta-oscuro-degrade); 
+  }
 
   from {
       -webkit-transform: scale3d(1, 1, 1);
@@ -105,9 +111,15 @@ body{
 
 @keyframes shadow-pulse {
 
-  from { box-shadow: 0.1em 0.1em 0 0.35em var(--violeta-oscuro-degrade); }
-  50% { box-shadow: 0.1em 0.1em 0 0.35em var(--violeta-oscuro-degrade); }
-  to { box-shadow: 0.1em 0.1em 0 0.35em var(--violeta-oscuro-degrade); }
+  from { 
+    box-shadow: 0.1em 0.1em 0 0.35em var(--violeta-oscuro-degrade); 
+  }
+  50% { 
+    box-shadow: 0.1em 0.1em 0 0.35em var(--violeta-oscuro-degrade); 
+  }
+  to { 
+    box-shadow: 0.1em 0.1em 0 0.35em var(--violeta-oscuro-degrade); 
+  }
 
   from {
       transform: scale3d(1, 1, 1);
@@ -141,7 +153,7 @@ body{
   height: 15em;
 }
 
-.vsGrid{
+.vsIcon{
   width: 135px;
   height: 240px;
   display: flex;
@@ -164,7 +176,7 @@ body{
 
       /* text */
 
-.footerGrid{
+.footer{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -235,7 +247,7 @@ body{
   align-items: center;
 }
 
-.score_human, .score_machine{
+.name_user, .machine{
   align-items: center;
   font-weight: 900;
   font-size: 2em;
@@ -246,7 +258,7 @@ body{
   padding: 0.15em 0 0 0;
 }
 
-.number_counter_h, .number_counter_m{
+.score_human, .score_machine{
   align-items: center;
   font-weight: 900;
   font-size: 9em;
