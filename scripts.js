@@ -150,11 +150,11 @@ let cont_m = [];
 
 rock_Btn.addEventListener('click', () =>{
 
-  if(cont_h.length < 10 && cont_m.length < 10){
+  if(cont_h.length < 3 && cont_m.length < 3){
     console.log(play('rock', machine_election(), cont_h, cont_m));
   }
   
-  if(cont_h.length === 10 || cont_m.length === 10){
+  if(cont_h.length === 3 || cont_m.length === 3){
     if(cont_h.length > cont_m.length){
       text_result.textContent = 'HAS GANADO!';
       text_result.style.color = 'var(--verde)';
@@ -170,11 +170,11 @@ rock_Btn.addEventListener('click', () =>{
 
 paper_Btn.addEventListener('click', () =>{
 
-  if(cont_h.length < 10 && cont_m.length < 10){
+  if(cont_h.length < 3 && cont_m.length < 3){
     console.log(play('paper', machine_election(), cont_h, cont_m));
   }
   
-  if(cont_h.length === 10 || cont_m.length === 10){
+  if(cont_h.length === 3 || cont_m.length === 3){
     if(cont_h.length > cont_m.length){
       text_result.textContent = 'HAS GANADO!';
       text_result.style.color = 'var(--verde)';
@@ -190,11 +190,11 @@ paper_Btn.addEventListener('click', () =>{
 
 scissors_Btn.addEventListener('click', () =>{
 
-  if(cont_h.length < 10 && cont_m.length < 10){
+  if(cont_h.length < 3 && cont_m.length < 3){
     console.log(play('scissors', machine_election(), cont_h, cont_m));
   }
   
-  if(cont_h.length === 10 || cont_m.length === 10){
+  if(cont_h.length === 3 || cont_m.length === 3){
     if(cont_h.length > cont_m.length){
       text_result.textContent = 'HAS GANADO!';
       text_result.style.color = 'var(--verde)';
