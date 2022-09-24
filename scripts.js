@@ -46,43 +46,50 @@ const machine_election = () =>{    //1,4,7 => rock    2,5,8 => paper    3,6,9 =>
 }
 
 
-const play = (user, machine) =>{
+const play = (user, machine, contH, contM) =>{
   let result;
 
-
-  if(user == 'rock'){
+  if(user === 'rock'){
     userImg.src = './imagenes/svg/rockstar_main.svg';
 
-    if(machine == 'rock'){
+    if(machine ==='rock'){
       robotImg.src = './imagenes/svg/rockstar_main.svg';
       result = 'Empate';
       return result;
 
-    }else if(machine == 'paper'){
+    }else if(machine === 'paper'){
+      contM.push('*');
+      score_machine.textContent = contM.length;
       robotImg.src = './imagenes/svg/toilet-paper_main.svg';
       result ='Perdiste :(';
       return result;
 
     }else{
+      contH.push('*');
+      score_human.textContent = contH.length;
       robotImg.src = './imagenes/svg/scissor_main.svg';
       result = 'Ganaste :)';
       return result;
     }
   
-  }else if(user == 'paper'){
+  }else if(user === 'paper'){
     userImg.src = './imagenes/svg/toilet-paper_main.svg';
 
-    if(machine == 'rock'){
+    if(machine === 'rock'){
+      contH.push('*');
+      score_human.textContent = contH.length;
       robotImg.src = './imagenes/svg/rockstar_main.svg';
       result = 'Ganaste :)';
       return result;
 
-    }else if(machine == 'paper'){
+    }else if(machine === 'paper'){
       robotImg.src = './imagenes/svg/toilet-paper_main.svg';
       result ='Empate';
       return result;
 
     }else{
+      contM.push('*');
+      score_machine.textContent = contM.length;
       robotImg.src = './imagenes/svg/scissor_main.svg';
       result = 'Perdiste :(';
       return result;
@@ -91,12 +98,16 @@ const play = (user, machine) =>{
   }else{
     userImg.src = './imagenes/svg/scissor_main.svg';
 
-    if(machine == 'rock'){
+    if(machine === 'rock'){
+      contM.push('*');
+      score_machine.textContent = contM.length;
       robotImg.src = './imagenes/svg/rockstar_main.svg';
       result = 'Perdiste :(';
       return result;
 
-    }else if(machine == 'paper'){
+    }else if(machine === 'paper'){
+      contH.push('*');
+      score_human.textContent = contH.length;
       robotImg.src = './imagenes/svg/toilet-paper_main.svg';
       result ='Ganaste :)';
       return result;
@@ -110,15 +121,18 @@ const play = (user, machine) =>{
 }
 
 
+let cont_h = [];
+let cont_m = [];
+
 
 rock_Btn.addEventListener('click', () =>{
-  console.log(play('rock', machine_election()));
+  console.log(play('rock', machine_election(), cont_h, cont_m));
 });
 
 paper_Btn.addEventListener('click', () =>{
-  console.log(play('paper', machine_election()));
+  console.log(play('paper', machine_election(), cont_h, cont_m));
 });
 
 scissors_Btn.addEventListener('click', () =>{
-  console.log(play('scissors', machine_election()));
+  console.log(play('scissors', machine_election(), cont_h, cont_m));
 });
