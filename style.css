@@ -272,3 +272,32 @@ body{
   -webkit-text-stroke-color: var(--violeta-oscuro-degrade);
   text-shadow: 0.03em 0.03em var(--violeta-oscuro-degrade);
 }
+
+.reset_btn{
+  display: flex;
+  align-items: center;
+  height: 1em;
+  background-color: var(--violeta-claro);
+  border-top: 0.2em solid var(--amarillo);
+  border-bottom: 0.2em solid var(--naranja);
+  border-radius: 0.3em;
+  box-sizing: border-box;
+  background-position: 100% 100%, 0 100% ;
+  background-repeat: no-repeat;
+  background-size: 0.2em 100%;
+  background-image: 
+  -webkit-linear-gradient(top, var(--amarillo) 0%, var(--naranja) 50%), 
+  -webkit-linear-gradient(top, var(--amarillo) 0%, var(--naranja) 50%);
+  padding: 0.9em 1.3em;
+  margin: 0em 0em;
+  position:relative;
+  cursor: pointer;
+  -webkit-animation: shadow-pulse 1s infinite;
+          animation: shadow-pulse 1s infinite;
+          font-weight: 700;
+  font-size: 1em;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: var(--violeta-medio);
+  padding: 0.5 0;
+}
