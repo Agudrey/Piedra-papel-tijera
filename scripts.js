@@ -28,6 +28,8 @@ const score_machine = document.getElementById('score_machine');
 // -----------------------------Funtions--------------------------------------- //
 
 
+// Eleccion de la maquina 
+
 const machine_election = () =>{    //1,4,7 => rock    2,5,8 => paper    3,6,9 => scissors
 
   let num_random = Math.round(Math.random() * (9 - 1) + 1);
@@ -48,6 +50,9 @@ const machine_election = () =>{    //1,4,7 => rock    2,5,8 => paper    3,6,9 =>
 }
 
 
+
+
+// Inicio del juego, cambio de charaters y actualización de arrays contadores 
 
 const play = (user, machine, contH, contM) =>{
   let result;
@@ -125,6 +130,10 @@ const play = (user, machine, contH, contM) =>{
 };
 
 
+
+
+// Botón para reiniciar el juego
+
 const reset = (contH, contM) =>{
   userImg.src = './imagenes/svg/user_main.svg';
   robotImg.src = './imagenes/svg/robot_main.svg';
@@ -134,7 +143,28 @@ const reset = (contH, contM) =>{
 
   score_human.textContent = contH.length;
   score_machine.textContent = contM.length;
+}
 
+
+
+
+// final del juego al llegar al puntaje establecido
+
+const stop = (contH, contM) =>{
+
+  if(contH.length > contM.length){
+    console.log('setso2');
+    text_result.textContent = 'HAS GANADO!';
+    text_result.style.color = 'var(--verde)';
+    return
+
+  }else if(contM.length > contH.length){
+    console.log('setso3');
+    text_result.textContent = 'HAS PERDIDO';
+    text_result.style.color = 'var(--rojo)';
+    return
+  }
+  // }
 }
 
 // -----------------------------Start-------------------------------------- //
@@ -152,28 +182,16 @@ const num_rounds = prompt('Ingresa el número de puntos para ganar');
 
 
 
+// botones usuario
+
 rock_Btn.addEventListener('click', () =>{
 
   if(cont_h.length < num_rounds && cont_m.length < num_rounds){
     console.log(play('rock', machine_election(), cont_h, cont_m));
   }
 
-  console.log(num_rounds);
-  console.log(cont_h.length);
-  console.log(cont_m.length);
-
-  
   if(cont_h.length == num_rounds || cont_m.length == num_rounds){
-    if(cont_h.length > cont_m.length){
-      text_result.textContent = 'HAS GANADO!';
-      text_result.style.color = 'var(--verde)';
-      return
-
-    }else if(cont_m.length > cont_h.length){
-      text_result.textContent = 'HAS PERDIDO';
-      text_result.style.color = 'var(--rojo)';
-      return
-    }
+    stop(cont_h, cont_m)
   }
 });
 
@@ -182,18 +200,9 @@ paper_Btn.addEventListener('click', () =>{
   if(cont_h.length < num_rounds && cont_m.length < num_rounds){
     console.log(play('paper', machine_election(), cont_h, cont_m));
   }
-  
-  if(cont_h.length == num_rounds || cont_m.length == num_rounds){
-    if(cont_h.length > cont_m.length){
-      text_result.textContent = 'HAS GANADO!';
-      text_result.style.color = 'var(--verde)';
-      return
 
-    }else if(cont_m.length > cont_h.length){
-      text_result.textContent = 'HAS PERDIDO';
-      text_result.style.color = 'var(--rojo)';
-      return
-    }
+  if(cont_h.length == num_rounds || cont_m.length == num_rounds){
+    stop(cont_h, cont_m)
   }
 });
 
@@ -204,19 +213,10 @@ scissors_Btn.addEventListener('click', () =>{
   }
 
   if(cont_h.length == num_rounds || cont_m.length == num_rounds){
-    if(cont_h.length > cont_m.length){
-      console.log(num_rounds);
-      text_result.textContent = 'HAS GANADO!';
-      text_result.style.color = 'var(--verde)';
-      return
-
-    }else if(cont_m.length > cont_h.length){
-      text_result.textContent = 'HAS PERDIDO';
-      text_result.style.color = 'var(--rojo)';
-      return
-    }
+    stop(cont_h, cont_m)
   }
 });
+
 
 
 // botón de restart
